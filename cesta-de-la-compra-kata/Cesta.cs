@@ -1,3 +1,4 @@
+using System.Globalization;
 using cesta_de_la_compra_kata;
 
 public class Cesta
@@ -17,6 +18,20 @@ public class Cesta
 
     public object ObtenerDetalles()
     {
-        throw new NotImplementedException();
+        string detalles = "--------------------------------------------\r\n" +
+                          "| Producto     | Price con IVA  | Cantidad |\r\n" +
+                            "| -----------  | -------------- | -------- |\r\n";
+        foreach (var producto in Productos)
+        {
+            detalles +=
+                 $"| {producto.Nombre.PadRight(12)} | {(producto.ObtenerPrecioFinal().ToString("0.00", CultureInfo.InvariantCulture) + " €"),-13}  | {producto.ObtenerCantidad().ToString().PadRight(8)} |\r\n";
+        }
+        detalles+= "|------------------------------------------|\r\n" +
+                  "| Promoción:                               |\r\n" +
+                  "--------------------------------------------\r\n" +
+                  $"| Total productos: {ObtenerCantidadProductos().ToString().PadRight(24)}|\r\n" +
+                  $"| Precio total: {(Productos.Sum(p => p.ObtenerPrecioFinal()).ToString("0.00", CultureInfo.InvariantCulture) + " €").PadRight(27)}|";
+
+        return detalles;
     }
 }

@@ -25,8 +25,8 @@ public class Producto
             "Lechuga" => (1.55D, 0.15D, 0.21D),
             "Tomate" => (0.52D, 0.15D, 0.21D),
             "Pollo" => (1.34D, 0.12D, 0.21D),
-            "Pan" => (0.71D, 0.12D, 0.1D),
-            "Maíz" => (1.21D, 0.12D, 0.1D),
+            "Pan" => (0.71D, 0.12D, 0.10D),
+            "Maíz" => (1.21D, 0.12D, 0.10D),
             _ => throw new ArgumentException(string.Format(ProductoNoEncontrado, nombreProducto))
         };
 
@@ -34,5 +34,5 @@ public class Producto
     public int ObtenerCantidad() => _cantidad;
     public double ObtenerPrecionUnitario() => Math.Ceiling((_costo + (_costo * _ingresoEsperado)) * 100) / 100;
     public double ObtenerTotal() => ObtenerPrecionUnitario() * _cantidad;
-    public double ObtenerPrecioFinal() => Math.Ceiling((ObtenerTotal() + (ObtenerTotal() * _impuestos)) * 100) / 100;
+    public double ObtenerPrecioFinal() => Math.Ceiling((ObtenerTotal() +Math.Round(ObtenerTotal() * _impuestos,4)) * 100) / 100;
 }

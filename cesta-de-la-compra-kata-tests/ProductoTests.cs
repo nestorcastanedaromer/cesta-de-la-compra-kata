@@ -16,7 +16,7 @@ namespace cesta_de_la_compra_kata_tests
             const string nombreProducto = "Lechuga";
             Producto producto = new(nombreProducto);
 
-            producto.ObtenerTotal().Should().Be(1.78D);
+            producto.ObtenerTotal().Should().Be(1.79D);
         }
     }
 }

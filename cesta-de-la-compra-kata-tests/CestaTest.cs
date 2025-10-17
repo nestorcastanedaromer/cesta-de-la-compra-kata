@@ -51,6 +51,21 @@ namespace cesta_de_la_compra_kata_tests
             cesta.Productos[1].Precio.Should().Be(precioUnitarioSegundoProducto);
         }
 
+        [Theory]
+        [InlineData("Lechuga",1.79D)]
+        [InlineData("Tomate",0.60D)]
+        [InlineData("Pollo", 1.51D)]
+        [InlineData("Pan", 0.80D)]
+        [InlineData("Maíz", 1.36D)]
+        public void Si_ObtienePrecio_Debe_Ser_Precio_Correcto(string producto, double precio)
+        {
+            Cesta cesta = new();
+
+            cesta.AgregarProducto(producto);
+
+            cesta.Productos[0].Precio.Should().Be(precio);
+        }
+
     }
 
     public class Producto

@@ -19,9 +19,8 @@ public class Producto
         Cantidad = 1;
     }
 
-    private static double ObtenerPrecioProducto(string nombreProducto)
-    {
-        return nombreProducto switch
+    private static double ObtenerPrecioProducto(string nombreProducto) =>
+        nombreProducto switch
         {
             "Lechuga" => 1.55D,
             "Tomate" => 0.52D,
@@ -30,11 +29,9 @@ public class Producto
             "Maíz" => 1.21D,
             _ => throw new ArgumentException(string.Format(ProductoNoEncontrado, nombreProducto))
         };
-    }
 
-    private static double ObtenerIngresoEsperado(string nombreProducto)
-    {
-        return nombreProducto switch
+    private static double ObtenerIngresoEsperado(string nombreProducto) =>
+        nombreProducto switch
         {
             "Lechuga" => 0.15D,
             "Tomate" => 0.15D,
@@ -42,15 +39,8 @@ public class Producto
             "Pan" => 0.12D,
             "Maíz" => 0.12D
         };
-    }
 
-    public double ObtenerPrecionUnitario()
-    {
-        return Math.Ceiling((Costo + (Costo * IngresoEsperado)) * 100) / 100;
-    }
+    public double ObtenerPrecionUnitario() => Math.Ceiling((Costo + (Costo * IngresoEsperado)) * 100) / 100;
 
-    public double ObtenerTotal()
-    {
-        return ObtenerPrecionUnitario() * Cantidad;
-    }
+    public double ObtenerTotal() => ObtenerPrecionUnitario() * Cantidad;
 }

@@ -1,19 +1,14 @@
 ﻿using FluentAssertions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace cesta_de_la_compra_kata_tests
 {
     public class ProductoTests
     {
-        
         [Fact]
         public void Si_ObtienTotal_Debe_Obtener_Valor_Correcto()
         {
             const string nombreProducto = "Lechuga";
+
             Producto producto = new(nombreProducto);
 
             producto.ObtenerTotal().Should().Be(1.79D);

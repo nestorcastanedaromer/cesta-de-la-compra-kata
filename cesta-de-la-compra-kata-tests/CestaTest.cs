@@ -76,64 +76,7 @@ namespace cesta_de_la_compra_kata_tests
             
             cesta.Invoking(metodo => metodo.AgregarProducto(productoInexistente))
                 .Should().Throw<ArgumentException>()
-                .WithMessage($"No se encontró el producto con nombre {productoInexistente}.");
-        }
-    }
-
-    public class Producto
-    {
-        public string Nombre { get; set; }
-        public double Costo { get; set; }
-        public double IngresoEsperado { get; set; }
-
-        public Producto(string nombre)
-        {
-            Nombre = nombre;
-            Costo = ObtenerPrecioProducto(nombre);
-            IngresoEsperado = ObtenerIngresoEsperado(nombre);
-        }
-
-        private static double ObtenerPrecioProducto(string nombreProducto)
-        {
-            return nombreProducto switch
-            {
-                "Lechuga" => 1.55D,
-                "Tomate" => 0.52D,
-                "Pollo" => 1.34D,
-                "Pan" => 0.71D,
-                "Maíz" => 1.21D,
-                _ => throw new ArgumentException($"No se encontró el producto con nombre {nombreProducto}.")
-            };
-        }
-
-        private static double ObtenerIngresoEsperado(string nombreProducto)
-        {
-            return nombreProducto switch
-            {
-                "Lechuga" => 0.15D,
-                "Tomate" => 0.15D,
-                "Pollo" => 0.12D,
-                "Pan" => 0.12D,
-                "Maíz" => 0.12D
-            };
-        }
-
-        public double ObtenerPrecionUnitario()
-        {
-            return Math.Ceiling((Costo + (Costo * IngresoEsperado)) * 100) / 100;
-        }
-    }
-
-
-    public class Cesta
-    {
-        public int ObtenerCantidadProductos() => Productos.Count;
-
-        public List<Producto> Productos = new();
-
-        public void AgregarProducto(string nombreProducto)
-        {
-            Productos.Add(new Producto(nombreProducto));
+                .WithMessage(string.Format(Producto.ProductoNoEncontrado,productoInexistente));
         }
     }
 }

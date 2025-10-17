@@ -4,7 +4,7 @@
 -[X] Debo poder ver el precio unitario del segundo producto en la cesta
 -[X] Debo poder ver el costo de todos los productos
 -[X] Debo poder ver el ingreso esperado de cada producto
--[] Debe Lanzar excepcion si producto no existe
+-[X] Debe Lanzar excepcion si producto no existe
 -[] Debo poder ver el precio unitario de todos los productos
 -[] Debo poder ver el precio total del producto en la cesta
 -[] Debo poder ver el precio total de los productos en la cesta

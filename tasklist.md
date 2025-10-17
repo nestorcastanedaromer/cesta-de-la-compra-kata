@@ -1,1 +1,2 @@
--[ ] Debe hacer algo
+-[x] Debo poder agregar un producto a la cesta
+-[x] Debo poder ver el nombre de los productos en la cesta

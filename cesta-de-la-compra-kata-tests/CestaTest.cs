@@ -23,7 +23,31 @@ namespace cesta_de_la_compra_kata_tests
 
             cesta.AgregarProducto("Lechuga");
 
-            cesta.Productos[0].Should().Be(productoEsperado);
+            cesta.Productos[0].Nombre.Should().Be(productoEsperado);
+        }
+
+        [Fact]
+        public void Si_Agrego_1_Producto_A_La_Cesta_Debe_El_Producto_Mostrar_Precio_Del_Producto_Agregado()
+        {
+            Cesta cesta = new();
+
+            const double precioUnitario= 1.79d;
+
+            cesta.AgregarProducto("Lechuga");
+
+            cesta.Productos[0].Precio.Should().Be(precioUnitario);
+        }
+
+    }
+
+    public class Producto
+    {
+        public string Nombre { get; set; }
+        public double Precio { get; set; }
+
+        public Producto(string nombre)
+        {
+            Nombre = nombre;
         }
     }
 
@@ -31,11 +55,11 @@ namespace cesta_de_la_compra_kata_tests
     {
         public int ObtenerCantidadProductos() => Productos.Count;
 
-        public List<string> Productos = new();
+        public List<Producto> Productos = new();
 
         public void AgregarProducto(string producto)
         {
-            Productos.Add(producto);
+            Productos.Add(new Producto(producto));
         }
     }
 }

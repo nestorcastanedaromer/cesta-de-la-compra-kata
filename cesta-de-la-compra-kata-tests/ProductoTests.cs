@@ -22,7 +22,7 @@ namespace cesta_de_la_compra_kata_tests
 
             Producto producto = new(nombreProducto);
 
-            producto.PrecioFinal().Should().Be(2.17D);
+            producto.ObtenerPrecioFinal().Should().Be(2.17D);
         }
     }
 }

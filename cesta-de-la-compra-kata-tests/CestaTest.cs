@@ -11,13 +11,14 @@ namespace cesta_de_la_compra_kata_tests
 
             cesta.AgregarProducto("Lechuga");
 
-            cesta.CantidadProducto.Should().Be(1);
+            cesta.ObtenerCantidadProductos().Should().Be(1);
         }
 
         [Fact]
         public void Si_Agrego_1_Producto_A_La_Cesta_Debe_Poder_Ver_El_Producto_Agregado()
         {
             Cesta cesta = new();
+
             const string productoEsperado = "Lechuga";
 
             cesta.AgregarProducto("Lechuga");
@@ -28,13 +29,12 @@ namespace cesta_de_la_compra_kata_tests
 
     public class Cesta
     {
+        public int ObtenerCantidadProductos() => Productos.Count;
 
-        public int CantidadProducto { get; set; }
-        public List<string> Productos = new List<string>();
+        public List<string> Productos = new();
 
         public void AgregarProducto(string producto)
         {
-            CantidadProducto = 1;
             Productos.Add(producto);
         }
     }

@@ -1,4 +1,5 @@
-﻿using FluentAssertions;
+﻿using cesta_de_la_compra_kata;
+using FluentAssertions;
 
 namespace cesta_de_la_compra_kata_tests
 {

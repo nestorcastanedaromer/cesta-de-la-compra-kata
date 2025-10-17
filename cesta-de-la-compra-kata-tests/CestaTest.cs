@@ -1,3 +1,4 @@
+using cesta_de_la_compra_kata;
 using FluentAssertions;
 
 namespace cesta_de_la_compra_kata_tests
@@ -27,33 +28,18 @@ namespace cesta_de_la_compra_kata_tests
         }
 
         [Theory]
-        [InlineData("Lechuga", 1.55D)]
-        [InlineData("Tomate", 0.52D)]
-        [InlineData("Pollo", 1.34D)]
-        [InlineData("Pan", 0.71D)]
-        [InlineData("Maíz", 1.21D)]
+        [InlineData("Lechuga", 1.79D)]
+        [InlineData("Tomate", 0.60D)]
+        [InlineData("Pollo", 1.51D)]
+        [InlineData("Pan", 0.80D)]
+        [InlineData("Maíz", 1.36D)]
         public void Si_ObtieneCosto_Debe_Ser_Costo_Correcto(string nombreProducto, double precioUnitario)
         {
             Cesta cesta = new();
 
             cesta.AgregarProducto(nombreProducto);
 
-            cesta.Productos[0].Costo.Should().Be(precioUnitario);
-        }
-
-        [Theory]
-        [InlineData("Lechuga", 0.15D)]
-        [InlineData("Tomate", 0.15D)]
-        [InlineData("Pollo", 0.12D)]
-        [InlineData("Pan", 0.12D)]
-        [InlineData("Maíz", 0.12D)]
-        public void Si_ObtieneIngresoEsperado_Debe_Ser_IngresoEsperado_Correcto(string nombreProducto, double precioUnitario)
-        {
-            Cesta cesta = new();
-
-            cesta.AgregarProducto(nombreProducto);
-
-            cesta.Productos[0].IngresoEsperado.Should().Be(precioUnitario);
+            cesta.Productos[0].ObtenerPrecionUnitario().Should().Be(precioUnitario);
         }
 
         [Fact]
@@ -89,7 +75,7 @@ namespace cesta_de_la_compra_kata_tests
             cesta.AgregarProducto(nombreProducto);
             cesta.AgregarProducto(nombreProducto);
 
-            cesta.Productos[0].Cantidad.Should().Be(2);
+            cesta.Productos[0].ObtenerCantidad().Should().Be(2);
             cesta.ObtenerCantidadProductos().Should().Be(2);
         }
 

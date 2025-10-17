@@ -72,7 +72,7 @@ namespace cesta_de_la_compra_kata_tests
         public void Si_AgregarProducto_Producto_No_Existe_Debe_LanzarExcepcion()
         {
             Cesta cesta = new();
-            const string productoInexistente = "Pera";
+            const string productoInexistente = "Peras";
             
             cesta.Invoking(metodo => metodo.AgregarProducto("Lechuga"))
                 .Should().Throw<ArgumentException>()

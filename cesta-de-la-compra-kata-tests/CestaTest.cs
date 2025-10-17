@@ -67,6 +67,17 @@ namespace cesta_de_la_compra_kata_tests
 
             cesta.Productos[0].ObtenerPrecionUnitario().Should().Be(precioUnitarioEsperado);
         }
+
+        [Fact]
+        public void Si_AgregarProducto_Producto_No_Existe_Debe_LanzarExcepcion()
+        {
+            Cesta cesta = new();
+            const string productoInexistente = "Pera";
+            
+            cesta.Invoking(metodo => metodo.AgregarProducto("Lechuga"))
+                .Should().Throw<ArgumentException>()
+                .WithMessage($"No se encontró el producto con nombre {productoInexistente}.");
+        }
     }
 
     public class Producto

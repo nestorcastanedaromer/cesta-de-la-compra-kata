@@ -38,6 +38,19 @@ namespace cesta_de_la_compra_kata_tests
             cesta.Productos[0].Precio.Should().Be(precioUnitario);
         }
 
+        [Fact]
+        public void Si_Agrego_2_Producto_Diferentes_A_La_Cesta_Debe_El_Segundo_Producto_Mostrar_Precio_Del_Producto_Correctamente()
+        {
+            Cesta cesta = new();
+
+            const double precioUnitarioSegundoProducto = 0.6D;
+
+            cesta.AgregarProducto("Lechuga");
+            cesta.AgregarProducto("Tomate");
+
+            cesta.Productos[0].Precio.Should().Be(precioUnitarioSegundoProducto);
+        }
+
     }
 
     public class Producto

@@ -8,6 +8,7 @@ public class Producto
     public string Nombre { get; set; }
     public double Costo { get; set; }
     public double IngresoEsperado { get; set; }
+    public int Total { get; set; }
 
     public Producto(string nombre)
     {

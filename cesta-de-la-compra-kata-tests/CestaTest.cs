@@ -78,5 +78,19 @@ namespace cesta_de_la_compra_kata_tests
                 .Should().Throw<ArgumentException>()
                 .WithMessage(string.Format(Producto.ProductoNoEncontrado,productoInexistente));
         }
+
+        [Fact]
+        public void Si_AgregarProducto_Recibe_Producto_Existente_Debe_Aumentar_Cantidad_Producto_Mas_Uno()
+        {
+            Cesta cesta = new();
+
+            const string nombreProducto = "Lechuga";
+
+            cesta.AgregarProducto(nombreProducto);
+            cesta.AgregarProducto(nombreProducto);
+
+            cesta.Productos[0].Total.Should().Be(2);
+            cesta.ObtenerCantidadProductos().Should().Be(2);
+        }
     }
 }

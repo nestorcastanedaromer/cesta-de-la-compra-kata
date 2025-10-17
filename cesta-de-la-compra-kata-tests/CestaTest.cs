@@ -55,6 +55,18 @@ namespace cesta_de_la_compra_kata_tests
 
             cesta.Productos[0].IngresoEsperado.Should().Be(precioUnitario);
         }
+
+        [Fact]
+        public void Si_ObtenienePrecioUnitario_Debe_Devolver_Valor_Redondeado_Correctamente()
+        {
+            Cesta cesta = new();
+
+            const double precioUnitarioEsperado = 1.79D;
+
+            cesta.AgregarProducto("Lechuga");
+
+            cesta.Productos[0].ObtenerPrecionUnitario().Should().Be(precioUnitarioEsperado);
+        }
     }
 
     public class Producto
@@ -62,6 +74,7 @@ namespace cesta_de_la_compra_kata_tests
         public string Nombre { get; set; }
         public double Costo { get; set; }
         public double IngresoEsperado { get; set; }
+        public double PrecioUnitario { get; set; }
 
         public Producto(string nombre)
         {
@@ -92,6 +105,11 @@ namespace cesta_de_la_compra_kata_tests
                 "Pan" => 0.12D,
                 "Maíz" => 0.12D
             };
+        }
+
+        public double ObtenerPrecionUnitario()
+        {
+            throw new NotImplementedException();
         }
     }
 

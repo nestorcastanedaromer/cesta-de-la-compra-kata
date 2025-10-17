@@ -1,2 +1,2 @@
--[x] Debo poder agregar un producto a la cesta
--[x] Debo poder ver el nombre de los productos en la cesta
+-[X] Debo poder agregar un producto a la cesta
+-[] Debo poder ver el nombre de los productos en la cesta

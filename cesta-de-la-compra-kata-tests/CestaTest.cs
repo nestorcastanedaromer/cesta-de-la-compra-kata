@@ -30,11 +30,12 @@ namespace cesta_de_la_compra_kata_tests
     {
 
         public int CantidadProducto { get; set; }
-        public object[] Productos { get; set; }
+        public List<string> Productos = new List<string>();
 
         public void AgregarProducto(string producto)
         {
             CantidadProducto = 1;
+            Productos.Add(producto);
         }
     }
 }

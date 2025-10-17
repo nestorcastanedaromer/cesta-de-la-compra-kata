@@ -74,7 +74,6 @@ namespace cesta_de_la_compra_kata_tests
         public string Nombre { get; set; }
         public double Costo { get; set; }
         public double IngresoEsperado { get; set; }
-        public double PrecioUnitario { get; set; }
 
         public Producto(string nombre)
         {
@@ -94,7 +93,7 @@ namespace cesta_de_la_compra_kata_tests
                 "Maíz" => 1.21D
             };
         }
-        
+
         private static double ObtenerIngresoEsperado(string nombreProducto)
         {
             return nombreProducto switch
@@ -109,7 +108,7 @@ namespace cesta_de_la_compra_kata_tests
 
         public double ObtenerPrecionUnitario()
         {
-            throw new NotImplementedException();
+            return Math.Ceiling((Costo + (Costo * IngresoEsperado)) * 100) / 100;
         }
     }
 

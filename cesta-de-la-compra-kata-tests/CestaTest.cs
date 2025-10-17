@@ -74,7 +74,7 @@ namespace cesta_de_la_compra_kata_tests
             Cesta cesta = new();
             const string productoInexistente = "Peras";
             
-            cesta.Invoking(metodo => metodo.AgregarProducto("Lechuga"))
+            cesta.Invoking(metodo => metodo.AgregarProducto(productoInexistente))
                 .Should().Throw<ArgumentException>()
                 .WithMessage($"No se encontró el producto con nombre {productoInexistente}.");
         }

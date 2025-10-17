@@ -48,6 +48,7 @@ namespace cesta_de_la_compra_kata_tests
         public Producto(string nombre)
         {
             Nombre = nombre;
+            Precio = 1.79D;
         }
     }
 

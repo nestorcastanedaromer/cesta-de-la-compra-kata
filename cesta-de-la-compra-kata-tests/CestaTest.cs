@@ -48,7 +48,7 @@ namespace cesta_de_la_compra_kata_tests
             cesta.AgregarProducto("Lechuga");
             cesta.AgregarProducto("Tomate");
 
-            cesta.Productos[0].Precio.Should().Be(precioUnitarioSegundoProducto);
+            cesta.Productos[1].Precio.Should().Be(precioUnitarioSegundoProducto);
         }
 
     }
@@ -61,9 +61,19 @@ namespace cesta_de_la_compra_kata_tests
         public Producto(string nombre)
         {
             Nombre = nombre;
-            Precio = 1.79D;
+            Precio = ObtenerPrecioProducto(nombre);
+        }
+
+        private static double ObtenerPrecioProducto(string nombreProducto)
+        {
+            return nombreProducto switch
+            {
+                "Lechuga" => 1.79D,
+                "Tomate" => 0.6D
+            };
         }
     }
+
 
     public class Cesta
     {

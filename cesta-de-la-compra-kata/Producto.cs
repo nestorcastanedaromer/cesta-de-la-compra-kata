@@ -9,12 +9,14 @@ public class Producto
     public double Costo { get; set; }
     public double IngresoEsperado { get; set; }
     public int Total { get; set; }
+    public int Cantidad { get; set; }
 
     public Producto(string nombre)
     {
         Nombre = nombre;
         Costo = ObtenerPrecioProducto(nombre);
         IngresoEsperado = ObtenerIngresoEsperado(nombre);
+        Cantidad = 1;
     }
 
     private static double ObtenerPrecioProducto(string nombreProducto)

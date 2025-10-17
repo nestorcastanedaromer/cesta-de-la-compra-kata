@@ -38,7 +38,7 @@ namespace cesta_de_la_compra_kata_tests
 
             cesta.AgregarProducto(nombreProducto);
 
-            cesta.Productos[0].PrecioUnitario.Should().Be(precioUnitario);
+            cesta.Productos[0].Costo.Should().Be(precioUnitario);
         }
 
         [Theory]
@@ -60,13 +60,13 @@ namespace cesta_de_la_compra_kata_tests
     public class Producto
     {
         public string Nombre { get; set; }
-        public double PrecioUnitario { get; set; }
+        public double Costo { get; set; }
         public double IngresoEsperado { get; set; }
 
         public Producto(string nombre)
         {
             Nombre = nombre;
-            PrecioUnitario = ObtenerPrecioProducto(nombre);
+            Costo = ObtenerPrecioProducto(nombre);
             IngresoEsperado = ObtenerIngresoEsperado(nombre);
         }
 
@@ -81,8 +81,7 @@ namespace cesta_de_la_compra_kata_tests
                 "Maíz" => 1.21D
             };
         }
-
-
+        
         private static double ObtenerIngresoEsperado(string nombreProducto)
         {
             return nombreProducto switch

@@ -1,9 +1,9 @@
 ﻿-[X] Debo poder agregar un producto a la cesta
 -[X] Debo poder ver el nombre de los productos en la cesta
 -[x] Debo poder ver el precio unitario del producto en la cesta
--[x] Debo poder ver el precio unitario del segundo producto en la cesta
--[x] Debo poder ver el costo de todos los productos
--[] Debo poder ver el ingreso esperado de cada producto
+-[X] Debo poder ver el precio unitario del segundo producto en la cesta
+-[X] Debo poder ver el costo de todos los productos
+-[X] Debo poder ver el ingreso esperado de cada producto
 -[] Debo poder ver el precio unitario de todos los productos
 -[] Debo poder ver el precio total del producto en la cesta
 -[] Debo poder ver el precio total de los productos en la cesta

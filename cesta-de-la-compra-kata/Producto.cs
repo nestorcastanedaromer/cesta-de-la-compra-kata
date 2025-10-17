@@ -51,6 +51,6 @@ public class Producto
 
     public double ObtenerTotal()
     {
-        throw new NotImplementedException();
+        return ObtenerPrecionUnitario() * Cantidad;
     }
 }

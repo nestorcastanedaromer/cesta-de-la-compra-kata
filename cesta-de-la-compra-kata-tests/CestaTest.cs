@@ -31,7 +31,7 @@ namespace cesta_de_la_compra_kata_tests
         {
             Cesta cesta = new();
 
-            const double precioUnitario= 1.79d;
+            const double precioUnitario = 1.79d;
 
             cesta.AgregarProducto("Lechuga");
 
@@ -52,8 +52,8 @@ namespace cesta_de_la_compra_kata_tests
         }
 
         [Theory]
-        [InlineData("Lechuga",1.79D)]
-        [InlineData("Tomate",0.60D)]
+        [InlineData("Lechuga", 1.79D)]
+        [InlineData("Tomate", 0.60D)]
         [InlineData("Pollo", 1.51D)]
         [InlineData("Pan", 0.80D)]
         [InlineData("Maíz", 1.36D)]
@@ -84,7 +84,10 @@ namespace cesta_de_la_compra_kata_tests
             return nombreProducto switch
             {
                 "Lechuga" => 1.79D,
-                "Tomate" => 0.6D
+                "Tomate" => 0.60D,
+                "Pollo" => 1.51D,
+                "Pan" => 0.80D,
+                "Maíz" => 1.36D
             };
         }
     }

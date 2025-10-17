@@ -41,7 +41,6 @@ namespace cesta_de_la_compra_kata_tests
             cesta.Productos[0].PrecioUnitario.Should().Be(precioUnitario);
         }
 
-
         [Theory]
         [InlineData("Lechuga", 0.15D)]
         [InlineData("Tomate", 0.15D)]
@@ -62,12 +61,13 @@ namespace cesta_de_la_compra_kata_tests
     {
         public string Nombre { get; set; }
         public double PrecioUnitario { get; set; }
-        public object IngresoEsperado { get; set; }
+        public double IngresoEsperado { get; set; }
 
         public Producto(string nombre)
         {
             Nombre = nombre;
             PrecioUnitario = ObtenerPrecioProducto(nombre);
+            IngresoEsperado = ObtenerIngresoEsperado(nombre);
         }
 
         private static double ObtenerPrecioProducto(string nombreProducto)
@@ -79,6 +79,19 @@ namespace cesta_de_la_compra_kata_tests
                 "Pollo" => 1.34D,
                 "Pan" => 0.71D,
                 "Maíz" => 1.21D
+            };
+        }
+
+
+        private static double ObtenerIngresoEsperado(string nombreProducto)
+        {
+            return nombreProducto switch
+            {
+                "Lechuga" => 0.15D,
+                "Tomate" => 0.15D,
+                "Pollo" => 0.12D,
+                "Pan" => 0.12D,
+                "Maíz" => 0.12D
             };
         }
     }

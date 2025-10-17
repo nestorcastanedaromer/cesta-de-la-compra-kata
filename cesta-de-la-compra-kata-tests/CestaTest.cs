@@ -57,11 +57,11 @@ namespace cesta_de_la_compra_kata_tests
         {
             return nombreProducto switch
             {
-                "Lechuga" => 1.79D,
-                "Tomate" => 0.60D,
-                "Pollo" => 1.51D,
-                "Pan" => 0.80D,
-                "Maíz" => 1.36D
+                "Lechuga" => 1.55D,
+                "Tomate" => 0.52D,
+                "Pollo" => 1.34D,
+                "Pan" => 0.71D,
+                "Maíz" => 1.21D
             };
         }
     }

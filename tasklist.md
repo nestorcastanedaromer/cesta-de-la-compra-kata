@@ -2,6 +2,7 @@
 -[X] Debo poder ver el nombre de los productos en la cesta
 -[x] Debo poder ver el precio unitario del producto en la cesta
 -[x] Debo poder ver el precio unitario del segundo producto en la cesta
+-[] Debo poder ver el costo de todos los productos
 -[] Debo poder ver el precio unitario de todos los productos
 -[] Debo poder ver el precio total del producto en la cesta
 -[] Debo poder ver el precio total de los productos en la cesta
@@ -9,7 +10,7 @@
 
 ## Tabla de precios de los productos de la tienda
 
-|Nombre|Precio|% Ingresos|Precio por unidad|Impuestos| |Precio final|
+|Nombre|Costo|% Ingresos|Precio por unidad|Impuestos| |Precio final|
 |:----|:----|:----|:----|:----|:----|:----|
 |Lechuga|1,55|15%|1,79|Normal |21%|2.17|
 |Tomate|0,52|15%|0,60|Normal |21%|0.73|

@@ -27,12 +27,12 @@ namespace cesta_de_la_compra_kata_tests
         }
 
         [Theory]
-        [InlineData("Lechuga", 1.79D)]
-        [InlineData("Tomate", 0.60D)]
-        [InlineData("Pollo", 1.51D)]
-        [InlineData("Pan", 0.80D)]
-        [InlineData("Maíz", 1.36D)]
-        public void Si_ObtienePrecio_Debe_Ser_PrecioUnitario_Correcto(string nombreProducto, double precioUnitario)
+        [InlineData("Lechuga", 1.55D)]
+        [InlineData("Tomate", 0.52D)]
+        [InlineData("Pollo", 1.34D)]
+        [InlineData("Pan", 0.71D)]
+        [InlineData("Maíz", 1.21D)]
+        public void Si_ObtieneCosto_Debe_Ser_Costo_Correcto(string nombreProducto, double precioUnitario)
         {
             Cesta cesta = new();
 

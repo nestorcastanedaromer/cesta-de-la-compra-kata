@@ -101,7 +101,8 @@ namespace cesta_de_la_compra_kata_tests
                 "Tomate" => 0.52D,
                 "Pollo" => 1.34D,
                 "Pan" => 0.71D,
-                "Maíz" => 1.21D
+                "Maíz" => 1.21D,
+                _ => throw new ArgumentException($"No se encontró el producto con nombre {nombreProducto}.")
             };
         }
 

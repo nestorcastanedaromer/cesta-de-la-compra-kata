@@ -14,4 +14,9 @@ public class Cesta
         else
             Productos.Add(new Producto(nombreProducto));
     }
+
+    public object ObtenerDetalles()
+    {
+        throw new NotImplementedException();
+    }
 }

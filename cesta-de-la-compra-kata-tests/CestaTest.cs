@@ -79,5 +79,34 @@ namespace cesta_de_la_compra_kata_tests
             cesta.ObtenerCantidadProductos().Should().Be(2);
         }
 
+
+        [Fact]
+        public void Si_ObtieneDetalles_Debe_Mostrar_Lista_Productos()
+        {
+            Cesta cesta = new();
+            string detallesEsperados= "--------------------------------------------\r\n" +
+                                     "| Producto     | Price con IVA  | Cantidad |\r\n" +
+                                     "| -----------  | -------------- | -------- |\r\n" +
+                                     "| Lechuga ??   | 2.17 €         | 1        |\r\n" +
+                                     "| Tomate ??    | 0.73 €         | 1        |\r\n" +
+                                     "| Pollo ??     | 1.83 €         | 1        |\r\n" +
+                                     "| Pan ??       | 0.88 €         | 1        |\r\n" +
+                                     "| Maíz ??      | 1.50 €         | 1        |\r\n" +
+                                     "|------------------------------------------|\r\n" +
+                                     "| Promoción:                               |\r\n" +
+                                     "--------------------------------------------\r\n" +
+                                     "| Total productos: 5                       |\r\n" +
+                                     "| Precio total: 7.11 €                     |";
+
+            cesta.AgregarProducto("Lechuga");
+            cesta.AgregarProducto("Tomate");
+            cesta.AgregarProducto("Pollo");
+            cesta.AgregarProducto("Pan");
+            cesta.AgregarProducto("Maíz");
+
+            cesta.ObtenerDetalles().Should().Be(detallesEsperados);
+        }
+
+
     }
 }

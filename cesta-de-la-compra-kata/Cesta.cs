@@ -16,22 +16,32 @@ public class Cesta
             Productos.Add(new Producto(nombreProducto));
     }
 
-    public object ObtenerDetalles()
+    public object ObtenerDetalles() => CrearEncabezado() + CrearDetalleDeProductos() + CrearTotales();
+
+    private static string CrearEncabezado() =>
+        "--------------------------------------------\r\n" +
+        "| Producto     | Price con IVA  | Cantidad |\r\n" +
+        "| -----------  | -------------- | -------- |\r\n";
+
+    private string CrearDetalleDeProductos()
     {
-        string detalles = "--------------------------------------------\r\n" +
-                          "| Producto     | Price con IVA  | Cantidad |\r\n" +
-                            "| -----------  | -------------- | -------- |\r\n";
+        string detalles = String.Empty;
+
         foreach (var producto in Productos)
-        {
             detalles +=
-                 $"| {producto.Nombre.PadRight(12)} | {(producto.ObtenerPrecioFinal().ToString("0.00", CultureInfo.InvariantCulture) + " €"),-13}  | {producto.ObtenerCantidad().ToString().PadRight(8)} |\r\n";
-        }
-        detalles+= "|------------------------------------------|\r\n" +
-                  "| Promoción:                               |\r\n" +
-                  "--------------------------------------------\r\n" +
-                  $"| Total productos: {ObtenerCantidadProductos().ToString().PadRight(24)}|\r\n" +
-                  $"| Precio total: {(Productos.Sum(p => p.ObtenerPrecioFinal()).ToString("0.00", CultureInfo.InvariantCulture) + " €").PadRight(27)}|";
+                $"| {producto.Nombre,-12} " +
+                $"| {producto.ObtenerPrecioFinal().ToString("0.00", CultureInfo.InvariantCulture) + " €",-13}  " +
+                $"| {producto.ObtenerCantidad().ToString(),-8} |\r\n";
 
         return detalles;
     }
+
+    private string CrearTotales() =>
+        "|------------------------------------------|\r\n" +
+        "| Promoción:                               |\r\n" +
+        "--------------------------------------------\r\n" +
+        $"| Total productos: {ObtenerCantidadProductos().ToString(),-24}|\r\n" +
+        $"| Precio total: {(Productos.Sum(p => p.ObtenerPrecioFinal())
+            .ToString("0.00", CultureInfo.InvariantCulture) + " €"),-27}|";
+
 }

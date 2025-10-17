@@ -33,4 +33,9 @@ public class Producto
     public double ObtenerTotal() => ObtenerPrecionUnitario() * _cantidad;
     public int ObtenerCantidad() => _cantidad;
     public void AumentarCantidad() => _cantidad += 1;
+
+    public object PrecioFinal()
+    {
+        throw new NotImplementedException();
+    }
 }

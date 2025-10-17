@@ -14,5 +14,15 @@ namespace cesta_de_la_compra_kata_tests
 
             producto.ObtenerTotal().Should().Be(1.79D);
         }
+
+        [Fact]
+        public void Si_ObtienPrecioFinal_Debe_Obtener_Valor_Correcto()
+        {
+            const string nombreProducto = "Lechuga";
+
+            Producto producto = new(nombreProducto);
+
+            producto.PrecioFinal().Should().Be(2.17D);
+        }
     }
 }

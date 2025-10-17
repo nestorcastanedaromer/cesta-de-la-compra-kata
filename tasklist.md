@@ -6,7 +6,8 @@
 -[X] Debo poder ver el ingreso esperado de cada producto
 -[X] Debe Lanzar excepcion si producto no existe
 -[X] Deboe agregar un producto existente incrementar cantidad producto y total productos en cesta
--[] Debo poder ver el precio total del producto en la cesta
+-[X] Debo poder ver el precio total del producto en la cesta
+-[] Debo poder ver el precio final del producto en la cesta
 -[] Debo poder ver el precio unitario de todos los productos
 -[] Debo poder ver el precio total de los productos en la cesta
 

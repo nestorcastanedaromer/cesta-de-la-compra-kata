@@ -40,12 +40,29 @@ namespace cesta_de_la_compra_kata_tests
 
             cesta.Productos[0].PrecioUnitario.Should().Be(precioUnitario);
         }
+
+
+        [Theory]
+        [InlineData("Lechuga", 0.15D)]
+        [InlineData("Tomate", 0.15D)]
+        [InlineData("Pollo", 0.12D)]
+        [InlineData("Pan", 0.12D)]
+        [InlineData("Maíz", 0.12D)]
+        public void Si_ObtieneIngresoEsperado_Debe_Ser_IngresoEsperado_Correcto(string nombreProducto, double precioUnitario)
+        {
+            Cesta cesta = new();
+
+            cesta.AgregarProducto(nombreProducto);
+
+            cesta.Productos[0].IngresoEsperado.Should().Be(precioUnitario);
+        }
     }
 
     public class Producto
     {
         public string Nombre { get; set; }
         public double PrecioUnitario { get; set; }
+        public object IngresoEsperado { get; set; }
 
         public Producto(string nombre)
         {

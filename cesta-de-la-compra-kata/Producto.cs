@@ -48,4 +48,9 @@ public class Producto
     {
         return Math.Ceiling((Costo + (Costo * IngresoEsperado)) * 100) / 100;
     }
+
+    public double ObtenerTotal()
+    {
+        throw new NotImplementedException();
+    }
 }

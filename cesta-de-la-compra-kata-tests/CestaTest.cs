@@ -92,5 +92,6 @@ namespace cesta_de_la_compra_kata_tests
             cesta.Productos[0].Cantidad.Should().Be(2);
             cesta.ObtenerCantidadProductos().Should().Be(2);
         }
+
     }
 }
